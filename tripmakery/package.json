@@ -1,0 +1,80 @@
+{
+  "name": "tripmakery-booking-crawler",
+  "version": "0.0.0",
+  "description": "tripmakery Booking Crawler",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm config set package-lock false",
+    "start": "cross-env NODE_ENV=default node index.js",
+    "test": "cross-env NODE_ENV=test nyc mocha -r ts-node/register src/**/*.{spec,e2e-spec}.ts"
+  },
+  "engines": {
+    "node": "9.4.0",
+    "npm": "5.6.0"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/*.{spec,e2e-spec}.ts",
+      "typings"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
+  },
+  "author": "tripbakery GmbH",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "@nestjs/common": "5.0.1",
+    "@nestjs/core": "5.0.1",
+    "@nestjs/microservices": "5.0.1",
+    "@nestjs/swagger": "2.0.2",
+    "@nestjs/testing": "5.0.1",
+    "@nestjs/websockets": "5.0.1",
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "@types/mongoose": "5.0.15",
+    "@types/node": "^10.1.3",
+    "@types/node-fetch": "^1.6.9",
+    "@types/sinon": "^5.0.0",
+    "@types/sinon-mongoose": "^1.3.7",
+    "axios": "^1.4.0",
+    "chai": "^4.1.2",
+    "chalk": "^2.4.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.1.6",
+    "date-holidays": "^1.2.5",
+    "dotenv": "^16.3.1",
+    "html-minifier": "^3.5.16",
+    "htmlparser2": "^3.9.2",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.14",
+    "node-fetch": "^2.1.2",
+    "node-uuid": "^1.4.8",
+    "nyc": "11.8.0",
+    "pretty-error": "^2.1.1",
+    "reflect-metadata": "^0.1.12",
+    "request": "^2.87.0",
+    "rxjs": "^6.2.0",
+    "sinon": "^5.0.10",
+    "sinon-mongoose": "^2.1.1",
+    "ts-node": "^6.0.5",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3",
+    "winston": "^2.4.2",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
+  }
+}
